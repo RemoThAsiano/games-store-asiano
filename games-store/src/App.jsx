@@ -4,6 +4,7 @@ import './App.css';
 import NavBar from './components/NAVBAR/NavBar';
 import Input from './components/Input/input';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Counter from './components/COUNTER/Counter';
 
 function App() {
 
