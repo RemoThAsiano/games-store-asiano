@@ -11,7 +11,7 @@ function Counter ({stock, initial, onAdd}) {
     }
 
     function handleButtonMenos() {
-        if (count > 0) {
+        if (count > initial) {
             setCount(count - 1)
         }
     }

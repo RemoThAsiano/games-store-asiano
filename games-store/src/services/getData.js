@@ -1,0 +1,43 @@
+const data = [
+    {
+        id: 1,
+        image:"https://assets.nintendo.com/image/upload/c_fill,f_auto,q_auto,w_1200/v1/ncom/en_CA/games/switch/r/rayman-legends-definitive-edition-switch/hero",
+        title:"Rayman Adventures",
+        price:"$200",
+        stock:"",
+    },
+    {
+        id: 2,
+        image:"https://as01.epimg.net/meristation/imagenes/2020/11/30/analisis/1606716947_243504_1606748672_noticia_normal.jpg",
+        title:"Visage",
+        price:"$150",
+        stock:"",
+    },
+    {
+        id: 3,
+        image:"https://www.desconsolados.com/wp-content/uploads/2021/12/Have-a-Nice-Death-bdc00a_98dfc0e3d5cc4877ba18511f837e8cf8_mv2.jpg",
+        title:"Have a Nice Death",
+        price:"$100",
+        stock:"",
+    },
+    {
+        id: 4,
+        image:"https://as01.epimg.net/meristation/imagenes/2021/07/20/avances/1626758869_049177_1626771602_noticia_normal.jpg",
+        title:"Fifa 22",
+        price:"$250",
+        stock:"",
+    },
+    {
+        id: 5,
+        image:"https://as01.epimg.net/meristation/imagenes/2021/09/17/avances/1631871790_617942_1631874024_noticia_normal.jpg",
+        title:"CODV",
+        price:"$400",
+        stock:"",
+    },
+]
+const getData = new Promise((response) => {
+    setTimeout(() => {
+        response(data)
+    }, 2000)
+})
+export default getData;
