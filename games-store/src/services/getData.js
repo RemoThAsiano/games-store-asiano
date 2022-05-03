@@ -2,7 +2,7 @@ const data = [
     {
         id: 1,
         image:"https://assets.nintendo.com/image/upload/c_fill,f_auto,q_auto,w_1200/v1/ncom/en_CA/games/switch/r/rayman-legends-definitive-edition-switch/hero",
-        title:"Rayman Adventures",
+        title:"Rayman Legends",
         price:"$200",
         stock:"",
     },
@@ -30,7 +30,7 @@ const data = [
     {
         id: 5,
         image:"https://as01.epimg.net/meristation/imagenes/2021/09/17/avances/1631871790_617942_1631874024_noticia_normal.jpg",
-        title:"CODV",
+        title:"COD Vanguard",
         price:"$400",
         stock:"",
     },
@@ -41,3 +41,5 @@ const getData = new Promise((response) => {
     }, 2000)
 })
 export default getData;
+
+//hacer que el stock de cada producto no se pueda agregar si no quedan mas
