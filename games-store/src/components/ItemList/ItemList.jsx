@@ -1,14 +1,14 @@
 import Item from "../Item/Item";
 import './ItemList.css';
 
-const ItemList = ({ products }) => {
-    console.log("Products en itemList", products)
+const ItemList = ({ item }) => {
+    // console.log("Products en itemList", item)
     return(
         <div className="item-list-container">
-            {products.map((product) => {
-                console.log(product)
+            {item.map((item) => {
+                // console.log(item)
                 return (
-                <Item key={product.id} title={product.title} price={product.price} image={product.image}/>
+                <Item key={item.id} id={item.id} title={item.title} price={item.price} image={item.image}/>
                 );
             })}
         </div>

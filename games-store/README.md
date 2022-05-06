@@ -1,4 +1,21 @@
-# Getting Started with Create React App
+# GamesStore Proyect
+
+Proyecto de venta de videojuegos.
+
+# NavBar
+
+Para el NavBar utilicé Boostrap, ya que como lo vine usando en otro curso estoy algo familiarizado. Empleando una nav con dropdown que son las que más me gustan, logrè
+llegar a encontrar una que me agrade como la que estoy empleando.
+
+# ItemList
+
+Además de Boostrap, usé algunos estilos propios con flex, logrando así que quedara más o menos como me gustase, agregandole algunos bordes en este caso "card" de Boostrap y así quedara más bonito.
+
+# Detalle de Items y Contador
+
+Para el detalle de los productos también me valí de Boostrap, agregando los mismos estilos que en los ItemList, usando también un contador de productos para agregar al carrito de la compra.
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +84,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
