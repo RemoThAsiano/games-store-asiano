@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './ItemListContainer.css'
 // import Counter from '../../components/COUNTER/Counter'
 import ItemList from '../../components/ItemList/ItemList'
 // import getData from '../../services/getData';
 import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom';
+import CartContext from '../../store/cartContext';
 
 function getProducts(category) {
   const myPromise = new Promise((resolve, reject) => {
@@ -159,6 +160,11 @@ const ItemListContainer = ({ greeting }) => {
 const [item, setItem] = useState([])
 const { categoryId } = useParams();
 // console.log("Products before promise", item)
+// const cartCtx = useContext(CartContext);
+
+// useEffect(() => {
+//   console.log(cartCtx.products);
+// }, []);
 
 useEffect(() => {
   // console.log(categoryId)
@@ -178,7 +184,8 @@ useEffect(() => {
     return (
       <div>
         <h3>
-        <ItemList item ={ item }/>
+        <ItemList item ={ item }/> 
+        {/* pasarle en vez de item cartCtx.products */}
         </h3>
         <div className='item-list-container'>
         {/* <Counter initial={0} stock={10} onAdd={agregar}/> */}
