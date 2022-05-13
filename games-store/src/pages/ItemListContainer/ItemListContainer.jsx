@@ -5,7 +5,10 @@ import ItemList from '../../components/ItemList/ItemList'
 // import getData from '../../services/getData';
 import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom';
-import CartContext from '../../store/cartContext';
+// import { collection, getDoc, getFirestore, query, where, limit } from 'firebase/firestore';
+
+
+// import CartContextProvider from '../../store/CartContextProvider';
 
 function getProducts(category) {
   const myPromise = new Promise((resolve, reject) => {
@@ -159,12 +162,30 @@ function getProducts(category) {
 const ItemListContainer = ({ greeting }) => {
 const [item, setItem] = useState([])
 const { categoryId } = useParams();
-// console.log("Products before promise", item)
-// const cartCtx = useContext(CartContext);
 
 // useEffect(() => {
-//   console.log(cartCtx.products);
-// }, []);
+//   const db = getFirestore();
+
+//   const itemCollection = itemCollection(db, 'items');
+
+//   const q = query(
+//    itemCollection,
+//    where('price', '<', 200)
+//    limit(1)
+//    )
+//   getDoc(itemCollection) // getDocs(q)
+//     .then(snapshot => {
+//      console.log(snapshot.docs[0].id)
+//      console.log(snapshot.docs[0].data)
+//       console.log(snapshot.docs.map(doc => {
+//          return { ...doc.data(), id: doc.id } 
+//       }));
+//     })
+//     .catch(
+//       err => console.log(err)
+//     );
+//   }, [categoryId]);
+//FIREBASE
 
 useEffect(() => {
   // console.log(categoryId)
@@ -173,7 +194,7 @@ useEffect(() => {
       setItem(res);
     })
     .catch(err => {
-      console.log(err);
+      // console.log(err);
       alert('ERROR');
     });
 },[categoryId]);

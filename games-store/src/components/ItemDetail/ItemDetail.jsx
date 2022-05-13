@@ -3,21 +3,16 @@ import Counter from '../COUNTER/Counter'
 import { useState } from 'react';
 import './ItemDetail.css';
 import { Link } from 'react-router-dom';
-import CartContext from '../../store/cartContext';
+import { useCartContext } from '../../store/CartContextProvider';
 
 function ItemDetail({ item }) {
     const [cantidadDeProductos, setCantidadDeProductos] = useState(null);
-    // const cartCtx = UseContext(CartContext);
+    const { addToCart } = useCartContext();
 
-    // useEffect(() => {
-    //     console.log(cartCtx)
-    // }, []);
-
-    function addHandler(quantityToAdd) {
-        setCantidadDeProductos(quantityToAdd); // se va
-        //Agregar "item" en addHAndler con quantityToAdd
-        //cartCtx.addProducts(item);
-        //
+    const addHandler = (quantityToAdd) => {
+        setCantidadDeProductos(quantityToAdd);
+        addToCart(item, quantityToAdd);
+      
     }
   return (
     <div className='item-detail'>
@@ -27,19 +22,20 @@ function ItemDetail({ item }) {
             </div>
         </div>
         <div className='der'>
-    <div className='card'>
+    <div className='card text-white bg-secondary mb-3'>
         <div className='info-container'>
             <h1>{ item?.title }</h1>
             {/* <h6>{item?.id}</h6> */}
             <h3>{ item?.price }</h3>
             </div>
             <div className='count-countainer'>
-            {cantidadDeProductos ?
-                <button className='terminar-compra'><Link to='/cart'>Terminar compra ({ cantidadDeProductos } items)</Link></button> :
-                <Counter initial={0} stock={item.stock} onAdd={addHandler} />
-                //cambiar cantidadDeProductos por "cartCtx.products.length"
-                //en button onClick={() => console.log(cartCtx)}
-            }
+                <div className="terminar-compra">
+                    {cantidadDeProductos ?
+                    <button><Link to='/cart'>Terminar compra ({ cantidadDeProductos } items)</Link></button> :
+                    <Counter  initial={0} stock={item.stock} onAdd={addHandler} />
+                    //cambiar cantidadDeProductos por "cartCtx.products.length"
+                    //en button onClick={() => console.log(cartCtx)}
+            }   </div>
         </div>
         </div>
     </div>

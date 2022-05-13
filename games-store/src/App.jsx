@@ -9,7 +9,7 @@ import ItemListContainer from './pages/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './pages/ItemDetailContainer/ItemDetailContainer';
 import { Route, Routes } from 'react-router-dom';
 import Cart from './pages/Cart/Cart';
-import CartContext from './store/cartContext';
+// import CartContext from './store/CartContextProvider';
 
 function App() {
 

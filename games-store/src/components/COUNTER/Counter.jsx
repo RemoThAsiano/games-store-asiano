@@ -23,7 +23,7 @@ function Counter ({stock, initial, onAdd}) {
             <input readOnly value={count} />
             <button onClick={() => handleButtonMas()}>+</button>
             </div>
-            <button className='border border-warning' onClick={() => (count <= stock ) && onAdd(count)}>Sumar al carrito</button>
+            <button className='border border-secondary' onClick={() => (count <= stock ) && onAdd(count)}>Sumar al carrito</button>
         </div>
         
     )

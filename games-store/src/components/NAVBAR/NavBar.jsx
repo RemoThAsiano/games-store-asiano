@@ -1,13 +1,14 @@
 import React from 'react';
 import { NavLink, Link} from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
+import "./NavBar.css";
 
 function NavBar(props) {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/" >GamesStore</Link>
-        <CartWidget/>
+        
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -29,6 +30,7 @@ function NavBar(props) {
           </ul>
         </div>
       </div>
+        <CartWidget className='tiralo-der'/>
     </nav>
     );
     }
