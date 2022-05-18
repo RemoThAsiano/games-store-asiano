@@ -55,23 +55,24 @@ function getItem(id) {
 
 function ItemDetailContainer(){
     const [item, setItem] = useState({});
+    const [loading, setLoading] = useState(true)
     const { id } = useParams();
+    
     // const cartCtx = useContext(CartContext);
 
 useEffect(() => {
     // console.log(id)
     getItem(id)
-        .then(res => {
-            setItem(res)
-        })
-        .catch(err => {
-            console.log(err);
-            alert('ERROR');
-        });
-}, [id])
+    .then((resp) => setItem(resp))
+    .catch((error) => console.log(error))
+    .finally(() => setLoading(false));
+}, [id]);
 return (
     <div className="item-detail-container">
-        <ItemDetail item={item} />
+        {
+            loading ? <h1>Cargando Juegos...</h1> :
+        
+        <ItemDetail item={item} />}
     </div>
 )
 }

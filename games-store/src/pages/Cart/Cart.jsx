@@ -8,9 +8,12 @@ const Cart = () => {
 
   return (
     <div>
+      <div className='cart-container'>
       {cartList.map((item) => (
         <CartItem key={item.id} item={item} />
       ))}
+      </div>
+      <div className='cart-container-totalPrice'>
       { cartList.length > 0 ? (
       <>
         <button onClick={() => removeAll()}>Vaciar Carrito</button>
@@ -18,6 +21,7 @@ const Cart = () => {
       </> ) : (
       <h1>Vacio</h1>
       )}
+      </div>
     </div>
   );
 };

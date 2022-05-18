@@ -161,6 +161,7 @@ function getProducts(category) {
 
 const ItemListContainer = ({ greeting }) => {
 const [item, setItem] = useState([])
+const [loading, setLoading] = useState(true)
 const { categoryId } = useParams();
 
 // useEffect(() => {
@@ -188,26 +189,25 @@ const { categoryId } = useParams();
 //FIREBASE
 
 useEffect(() => {
-  // console.log(categoryId)
+  setLoading(true);
   getProducts(categoryId)
-    .then(res => {
-      setItem(res);
-    })
-    .catch(err => {
-      // console.log(err);
-      alert('ERROR');
-    });
-},[categoryId]);
+    .then((resp) => setItem(resp))
+    .catch((error) => console.log(error))
+    .finally(() => setLoading(false));
+}, [categoryId]);
+
+
     // function agregar(){
     //   console.log('agregaste');
     // }
     
     return (
-      <div>
+      <div> {
+        loading ? <h1>Cargando Juegos...</h1> : 
         <h3>
         <ItemList item ={ item }/> 
         {/* pasarle en vez de item cartCtx.products */}
-        </h3>
+        </h3>}
         <div className='item-list-container'>
         {/* <Counter initial={0} stock={10} onAdd={agregar}/> */}
         </div>
