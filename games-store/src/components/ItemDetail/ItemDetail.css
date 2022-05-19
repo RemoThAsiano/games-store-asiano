@@ -7,7 +7,7 @@
 }
 
 .izq {
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -26,12 +26,12 @@
     justify-content: center;
 }
 
-.img-detail-container {
-    width: 100%;
-    height: 100%;
+.img-detail-containerr {
+    width: 80%;
+    height: 80%;
 }
 
-.img-detail-container img{
+.img-detail-containerr img{
     width: 80%;
     height: 80%;
     object-fit: contain;

@@ -15,12 +15,12 @@ function getProducts(category) {
 
   const itemCollection = collection(db, 'items');
 
-  const q = query(
-   itemCollection,
-
+  const q = category && query(
+    itemCollection,
+    where('category', '==', category)
    );
 
-  return getDocs(q)
+  return getDocs(q || itemCollection);
   // const myPromise = new Promise((resolve, reject) => {
   //   const productList = [
   //       {
@@ -169,7 +169,7 @@ function getProducts(category) {
     // return myPromise;
   }
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
 const [item, setItem] = useState([])
 const [loading, setLoading] = useState(true)
 const { categoryId } = useParams();
@@ -204,7 +204,8 @@ useEffect(() => {
   setLoading(true);
   getProducts(categoryId)
     .then(snapshot => {
-      setItem(snapshot.docs.map(doc => { return { ...doc.data(), id: doc.id }}));
+      setItem(snapshot.docs.map(doc => { 
+        return { ...doc.data(), id: doc.id }}));
     })
     .catch(error => {
       console.log(error);
@@ -221,10 +222,10 @@ useEffect(() => {
       <div> {
         loading ? <h1>Cargando Juegos...</h1> : 
         <h3>
-        <ItemList item ={ item }/> 
+        <ItemList   className='item-list-container' item ={ item }/> 
         {/* pasarle en vez de item cartCtx.products */}
         </h3>}
-        <div className='item-list-container'>
+        <div>
         {/* <Counter initial={0} stock={10} onAdd={agregar}/> */}
         </div>
       </div>

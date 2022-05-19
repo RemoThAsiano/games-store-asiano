@@ -17,7 +17,7 @@ function ItemDetail({ item }) {
   return (
     <div className='item-detail'>
         <div className='izq'>
-            <div className='img-detail-container'>
+            <div className='img-detail-containerr'>
                 <img className='card' src={ item?.image } alt='img' />
             </div>
         </div>

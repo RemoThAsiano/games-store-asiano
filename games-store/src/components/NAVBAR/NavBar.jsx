@@ -2,8 +2,23 @@ import React from 'react';
 import { NavLink, Link} from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
 import "./NavBar.css";
+import { getFirestore, collection, getDocs} from 'firebase/firestore';
+
+function getCategories() {
+  const db = getFirestore();
+  const itemsColletion = collection(db, 'items');
+  return getDocs(itemsColletion)
+}
 
 function NavBar(props) {
+  //const [categories, setCategories] = useState([]);
+  //useEffect(() => {
+  // getCategories()
+  //  .then(snapshot => {
+    // const categories = snapshot.docs.map(doc.data().category)
+    //setCategories(categories);
+  //})
+  //}, []);
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
