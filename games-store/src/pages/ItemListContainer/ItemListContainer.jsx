@@ -6,6 +6,7 @@ import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, getFirestore, query, where, limit } from 'firebase/firestore';
 import './ItemListContainer.css'
+import Spinner from '../../components/Spinner/Spinner';
 
 
 // import CartContextProvider from '../../store/CartContextProvider';
@@ -220,7 +221,7 @@ useEffect(() => {
     
     return (
       <div> {
-        loading ? <h1>Cargando Juegos...</h1> : 
+        loading ? <Spinner/>: 
         <h3>
         <ItemList   className='item-list-container' item ={ item }/> 
         {/* pasarle en vez de item cartCtx.products */}

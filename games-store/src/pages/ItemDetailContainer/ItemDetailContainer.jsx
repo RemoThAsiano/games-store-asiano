@@ -4,6 +4,7 @@ import ItemDetail from '../../components/ItemDetail/ItemDetail';
 // import CartContextProvider from "../../store/CartContextProvider";
 import './ItemDetailContainer.css';
 import { doc, getDoc, getFirestore } from 'firebase/firestore';
+import Spinner from "../../components/Spinner/Spinner";
 
 function getItem(id) {
     const db = getFirestore();
@@ -79,7 +80,7 @@ useEffect(() => {
 return (
     <div className="item-detail-container">
         {
-            loading ? <h1>Cargando Juegos...</h1> :
+            loading ? <Spinner/> :
         
         <ItemDetail item={item} />}
     </div>
