@@ -51,7 +51,7 @@ export const Checkout = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         const date = new Date()
-        const items = cartList.map(e => {return {id:e.id,name:e.name,price:e.price,quantity:e.quantity }})
+        const items = cartList.map(e => {return {id:e.id,name:e.title,price:e.price,quantity:e.quantity }})
         const total = totalPrice()
         const data = {buyer, items, date, total}
         generateOrder(data)
